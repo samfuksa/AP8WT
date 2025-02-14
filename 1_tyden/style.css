@@ -1,0 +1,17 @@
+h1 {
+    color: darkmagenta;
+    font-family: Comic Sans MS;
+}
+
+
+p {
+    color: orange;
+    border: 3px dashed green;
+}
+
+
+
+div {
+    border: 1px solid pink;
+    padding: 10px;
+}
