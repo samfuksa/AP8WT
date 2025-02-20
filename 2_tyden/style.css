@@ -58,7 +58,7 @@ body {
     width: 10%;
     margin-bottom: 1rem;
     text-decoration: none;
-    
+
 }
 
 
@@ -71,4 +71,6 @@ img {
     margin-bottom: 3rem;
 }
 
-a {display: block;}
+a {
+    display: block;
+}
