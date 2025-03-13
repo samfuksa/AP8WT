@@ -44,6 +44,7 @@
     background: linear-gradient(to right, green, orange);
     background: radial-gradient(red, blue, green);
     border-radius: 50%;
+    box-shadow: 10px 10px 20px black;
 }
 
 
