@@ -1,14 +1,86 @@
 <h1>BMI CALCULATOR</h1>
 
+
+<input type="number" id="weight" placeholder="Váha (kg)" />
+<input type="number" id="height" placeholder="Výška (m)" />
+
+<button>Spočítej</button>
+
+
+
+<h2>Vaše BMI je:</h2> <h2 id="vysledek"></h2>
 <script>
 
+let weight = document.querySelector("#weight");
+let height = document.querySelector("#height");
+let button = document.querySelector("button");
+let vysledek = document.querySelector("#vysledek");
+let opacity = 1;
 
+button.addEventListener("click", ()=>{
+    if (weight.value.length === 0 || height.value.length === 0) {
+        alert("Vyplňte všechny údaje");
+        document.body.style.backgroundColor = "red"; //zcervena
+        opacity -= 0.1;
+console.log(opacity);
+        weight.style.opacity = opacity;
+        height.style.opacity = opacity;
+        return;
+    }
 
-
-
-
-
-
-
+    if (opacity < 0) {
+      
+        weight.disabled = true
+        height.disabled = true
+    }
     
+    console.log(weight.value);
+    console.log(height.value);
+
+    let w = weight.value;
+    let h = height.value;
+
+    let bmi = w / (h * h);
+    console.log(bmi);
+    vysledek.innerText = bmi;
+})
+//bmi = weight / (height * height) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+    input, button, h3, h2 {
+        display: block;
+        margin: 1rem;
+        padding: 0.6rem;
+        
+    }
+
+    button{
+        background-color: aquamarine;
+        border: none;
+        border-radius: 1rem;
+    }
+
+</style>
