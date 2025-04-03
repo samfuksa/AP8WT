@@ -20,4 +20,83 @@ if (value>20) {
     console.log("hodnota je menší než 20");
 }
 
+
+
+function s(a, b){
+    console.log("a je: " + a);
+    console.log("b je: " + b);
+    return a * b;
+}
+
+
+let area = s(5, 10);
+console.log(`Obsah je: ${area}`);
+
+let person = {
+    name: "Sam",
+    id: 1,
+    age: 20,
+    height: 180,
+    weight: 80
+};
+
+
+console.log(person);
+console.log(person.name);
+
+
+class Person {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    gree(){
+        console.log("Ahoj, já jsem " + this.name);
+    }
+}
+
+let p = new Person("Sam", 123);
+console.log(p);
+
+let greeting = p.gree();
+console.log(greeting);
+
+
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+
+
+// while, repeat
+
+
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+
+let values = [1, 2, 3, 4, 5];
+console.log(values);
+
+values [0] = 3;
+console.log(values);
+
+values.push(6); //prida na konec
+console.log(values);
+
+values.shift(); //odstrani prvni
+console.log(values);
+
+values.unshift(12); //prida na zacatek
+console.log(values);
+
+values.pop(); //odstrani posledni
+console.log(values);
+
+
+
+
+
+
 </script>
