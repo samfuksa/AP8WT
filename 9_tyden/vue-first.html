@@ -12,11 +12,19 @@
 
     <div id="app">
         <h1>Count: {{ count }}</h1>
-        <button @click = "increment">Increment</button>
+        <button @click = "increment">Increment</button><br>
+        <button @click = "add">Add to list</button>
         <input type="text" v-model="text" @keyup="handleChange" /> 
         <h3>{{text}}</h3>
         <h3>{{text.length}}</h3>
         <h3 v-if="show">Text is too long</h3>
+        <h3>Tasks: {{tasks.length}}</h3>
+        <div>
+            <ul>
+                <li v-for="(task, index) in tasks" :key="index">
+                <h3> {{task}}</h3></li>
+            </ul>
+        </div>
     </div>
   <script>
 const { createApp, ref } = Vue;
@@ -25,6 +33,7 @@ createApp({
         const count =ref(0);
         const text = ref("");
         const show = ref(false);
+        const tasks = ref([]);
         count.value = 0;
         const increment = () =>
         count.value ++;
@@ -37,11 +46,14 @@ createApp({
             }
         };
 
-
+        const add = () => {
+            tasks.value.push(text.value);
+            alert(tasks.value.length);
+        };
         const changed = () =>{
 
         };
-        return {count, increment, text, handleChange, show};
+        return {count, increment, text, handleChange, show, add, tasks};
     }
 }).mount('#app')
 
