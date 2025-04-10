@@ -3,9 +3,8 @@
 <script>
     let clicks = document.querySelector("#clicks");
     clicks.innerText = 0;
+    let count = 0;
     document.querySelector("button").addEventListener("click", () => {
-
-        let count = parseInt(clicks.innerText) || 0;
         count++;
         clicks.innerText = count;
     });
