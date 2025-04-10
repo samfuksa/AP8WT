@@ -8,9 +8,43 @@
   
 </head>
 <body>
-  <script>
 
-    
+
+    <div id="app">
+        <h1>Count: {{ count }}</h1>
+        <button @click = "increment">Increment</button>
+        <input type="text" v-model="text" @keyup="handleChange" /> 
+        <h3>{{text}}</h3>
+        <h3>{{text.length}}</h3>
+        <h3 v-if="show">Text is too long</h3>
+    </div>
+  <script>
+const { createApp, ref } = Vue;
+createApp({
+    setup(){
+        const count =ref(0);
+        const text = ref("");
+        const show = ref(false);
+        count.value = 0;
+        const increment = () =>
+        count.value ++;
+        const handleChange = () => {
+            if(text.value.length > 10){
+                show.value = true;
+        }
+            else{
+                show.value = false;
+            }
+        };
+
+
+        const changed = () =>{
+
+        };
+        return {count, increment, text, handleChange, show};
+    }
+}).mount('#app')
+
   </script>
 </body>
 </html>
